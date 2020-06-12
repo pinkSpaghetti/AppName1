@@ -1,12 +1,17 @@
-<%- include('partials/header'); %> 
+<%- include('partials/404header'); %> 
 <div id="main" class="error404">
   <div class="container-fluid">
     <div class="row">
       <main role="main" class="col error404">
         <h1><%= error.status %></h1>
-        <h3><%= message %></h3>
+        <div class="error-text">
+          <h2>Goal Reached!</h2>
+          <h2>How Did We Get Here?</h2>
+          <h5>Reach a page the does not exist</h5>
+          <h6><a href="">Turn Back</a></h6>
+        </div>
       </main>
     </div> <!-- end .row --> 
-  </div><!-- end .container-fluid -->
+  </div><!-- end .container-fluid  -->
 </div><!-- end #main -->
 <%- include('partials/footer'); %>
