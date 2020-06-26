@@ -1,17 +1,18 @@
-body {
-  padding: 50px;
+body{
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(30, 30, 30, 0.5);
 }
 
-a {
+a{
   color: #121212;
   text-decoration: underline;
 }
 
-a i {
+a i{
   margin-right: 0.4rem;
 }
 
+/* 404 Page */
 .error404{
   text-align: center;
   position: relative;
@@ -32,4 +33,50 @@ a i {
   text-align: center;
   top: 50%;
   overflow: hidden;
+}
+
+/* Login/Index Page */
+#login-main{
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.row{
+  margin: 10vh 0 2vh 0;
+}
+
+#login-box{
+  background-color: grey;
+  padding: 0;
+}
+
+#login-box h1{
+  text-align: center;
+  padding-top: 15px;
+}
+
+#login-box h3{
+  padding: 5px 10px;
+}
+
+#login-box #user-input{
+  margin: 5px 10px;
+  background-color: rgba(256, 256, 256, 0.3);
+  height: 2.5rem;
+}
+
+#login-box h5{
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+/* Sign Up Page */
+#login-main{
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#input-label{
+  text-align: right;
+  padding: 0;
 }
