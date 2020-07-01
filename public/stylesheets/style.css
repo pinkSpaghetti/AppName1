@@ -41,7 +41,7 @@ a i{
   overflow: hidden;
 }
 
-.row{
+#login-main .row{
   margin: 10vh 0 2vh 0;
 }
 
@@ -57,6 +57,7 @@ a i{
 
 #login-box h3{
   padding: 5px 10px;
+  margin: 4px 0;
 }
 
 #login-box #user-input{
@@ -78,5 +79,19 @@ a i{
 
 #input-label{
   text-align: right;
+  padding: 0;
+}
+
+#sign-up-main .row{
+  margin: 10vh 0 2vh 0;
+}
+
+/* Home Page */
+#homepage-main{
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#homepage-main .container-fluid, #homepage-main .col-2, #homepage-main .col-9, #homepage-main .col-1{
   padding: 0;
 }
