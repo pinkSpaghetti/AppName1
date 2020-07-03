@@ -1,6 +1,6 @@
 body{
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgba(30, 30, 30, 0.5);
+  background-color: #8c8c8c;
 }
 
 a{
@@ -92,6 +92,27 @@ a i{
   overflow-x: hidden;
 }
 
-#homepage-main .container-fluid, #homepage-main .col-2, #homepage-main .col-9, #homepage-main .col-1{
+#homepage-main .container-fluid, #homepage-main .col-3, #homepage-main .col-8, #homepage-main .col-1{
   padding: 0;
+  min-height: 100vh;
+}
+
+#homepage-main .col-3{
+  background-color: #7c7c7c;
+}
+
+#homepage-main .col-1{
+  background-color: #6c6c6c;
+}
+
+#groups-home, #sidebar-home, #searchbar-home, #main-home{
+  margin: 0;
+}
+
+#searchbar-home{
+  background-color: #6c6c6c;
+}
+
+#search-box-home{
+  margin: 0.5rem;
 }
