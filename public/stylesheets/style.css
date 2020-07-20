@@ -92,7 +92,7 @@ a i{
   overflow-x: hidden;
 }
 
-#homepage-main .container-fluid, #homepage-main .col-3, #homepage-main .col-8, #homepage-main .col-1{
+#homepage-main .container-fluid, #homepage-main .back-panel{
   padding: 0;
   min-height: 100vh;
 }
@@ -105,7 +105,7 @@ a i{
   background-color: #6c6c6c;
 }
 
-#groups-home, #sidebar-home, #searchbar-home, #main-home{
+#groups-home, #searchbar-home, #main-home{
   margin: 0;
 }
 
@@ -115,4 +115,18 @@ a i{
 
 #search-box-home{
   margin: 0.5rem;
+}
+
+.friends-tab{
+  margin: 0.75rem;
+  background-color: #dadada;
+}
+
+.friends-tab h3{
+  margin: 4px 0;
+}
+
+.friends-tab .fa-user{
+  font-size: 2em;
+  margin: 6px 0 2px 0;
 }
