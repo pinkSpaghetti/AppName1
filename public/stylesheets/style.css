@@ -92,6 +92,10 @@ a i{
   overflow-x: hidden;
 }
 
+#homepage-main h3{
+  font-size: 2vw;
+}
+
 #homepage-main .container-fluid, #homepage-main .back-panel{
   padding: 0;
   min-height: 100vh;
@@ -117,16 +121,30 @@ a i{
   margin: 0.5rem;
 }
 
-.friends-tab{
+.friends-tab, .mentions-tab{
   margin: 0.75rem;
   background-color: #dadada;
 }
 
-.friends-tab h3{
+.friends-tab h3, .mentions-tab h3{
   margin: 4px 0;
 }
 
-.friends-tab .fa-user{
+.friends-tab .fa-user, .mentions-tab .fa-at{
   font-size: 2em;
   margin: 6px 0 2px 0;
+}
+
+#dms-list-home{
+  margin: 1em;
+}
+
+#groups-home{
+  background-color: #dadada;
+  margin: 8px;
+}
+
+#groups-home .fa-home{
+  display: inline-block;
+  font-size: 5em;
 }
