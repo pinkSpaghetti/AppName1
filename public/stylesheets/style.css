@@ -86,6 +86,17 @@ a i{
   margin: 10vh 0 2vh 0;
 }
 
+#register-email, #register-password, #password-confirm{
+  height: 100%;
+  font-size: 1.5em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#register-email:focus, #register-password:focus, #password-confirm:focus{
+  outline: none;
+}
+
 /* Home Page */
 #homepage-main{
   min-height: 100vh;
