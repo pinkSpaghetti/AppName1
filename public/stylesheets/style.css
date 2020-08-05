@@ -71,6 +71,17 @@ a i{
   padding-bottom: 15px;
 }
 
+#login-email, #login-password{
+  height: 100%;
+  font-size: 1.5em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#login-email:focus, #login-password:focus{
+  outline: none;
+}
+
 /* Sign Up Page */
 #login-main{
   min-height: 100vh;
