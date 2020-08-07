@@ -114,8 +114,19 @@ class UserController{
         }
     };
 
-    /* YOU NEED TO ADD COMMENTS FROM HERE ON */
 
+    /**
+     * Asynchronous function that handles POST form submission to  /account
+     * On success renders '/account' with a success message
+     * On failure renders '/account' with an error message
+     * Requires the following POST form name fields:
+     *   
+     * @param {string} request.body.displayName     User's display anem from field
+     * @param {email} request.body.email            User's email from field
+     * @param {file} request.body.avatar            User's avatar from image upload field
+     * 
+     * @returns {Object} response.render Object
+     */
     updateAccount =  async (request, response) => {
 
         var currentUser = AraDTUserModel.getCurrentUser();
@@ -123,22 +134,38 @@ class UserController{
             try{
                 await AraDTUserModel.update(request, response)
                     .then(() => {
+                        // User's profile successfully updated, inform the user
                         response.locals.errors.profile = ['Your details have been updated'];
                         response.render('account');
                     }).catch((error) => {
+                        // Firebase profile update failed, so inform the user why
                         response.locals.errors.profile = [error.message];
                         response.render('account');
                     });
             } catch(errors) {
+                // Form has failed validation, so return errors
                 response.locals.errors.profile = errors;
                 response.render('account');
             }
         } else {
+            // Runs 'logout' if the user is invalid, non-existent, or has an invalid session
             this.logout(request, response);
         }
 
     };
+
     
+    /**
+     * Asynchronous function that handles the POST form submission to  /password
+     * On success renders '/account' with a success message
+     * On failure renders '/account' with an error message
+     * Requires the following POST form name fields:
+     * 
+     * @param {password} request.body.password          The user's new password
+     * @param {password} request.body.passwordConfirm   Confirmation of the new password
+     * 
+     * @returns {Object} response.render object
+     */
     updatePassword = async (request, response) => {
 
         var currentUser = AraDTUserModel.getCurrentUser();
@@ -146,22 +173,27 @@ class UserController{
             try{
                 await AraDTUserModel.updatePassword(request, response)
                     .then(() => {
+                        // Password successfully updated, so inform the user
                         response.locals.errors.password = ['Your password has been updated'];
                         response.render('account');
                     }).catch((error) => {
+                        // Firebase password update failed, so return Firebase errors
                         response.locals.errors.password = [error.message];
                         response.render('account');
                     });
             } catch(errors) {
+                // Form has failed validation, so return error(s)
                 response.locals.errors.password = errors;
                 response.render('account');
             }
         } else {
+            // Runs 'logout' if the user is invalid, non-existent, or has an invalid session
             this.logout(request, response);
         }
 
     };
 
+    // Redirects to '/' if the users session is invalid or non-existent, otherwise renders '/account'
     getAccount(request, response){
         
         if (!request.session.token) {
@@ -170,6 +202,7 @@ class UserController{
         response.render('account');
     }
 
+    //
     logout = async (request, response) => {
         request.session.errors.general = ['You have been logged out'];
         response.locals.loggedin = false;

@@ -11,8 +11,8 @@ class Router{
 
     constructor(){
         this.setVariables();
-        this.addBaseRoutes();
         this.addControllers();
+        this.addBaseRoutes();
         this.handle404s();
         this.handleErrors();
     }
@@ -55,7 +55,7 @@ class Router{
         response.render('index');
     }
 
-    register(request, response, next) {
+    register(request, response) {
         response.render('register');
     }
 
