@@ -1,9 +1,36 @@
 <%- include('partials/styleOnlyHeader'); %>
 <div id="account-main">
     <div class="container-fluid">
-        <div class="row">
-            
-        </div>
+        <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update">
+            <div class="row">
+                <div class="col-1 back-panel">
+                </div>
+                <div class="col-3 back-panel2">
+                    <div id="user-avatar">
+                        <img src="https://via.placeholder.com/300">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                </div>          
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-3" id="update-labels">
+                            <h3>Display Name</h3>
+                            <br>
+                            <h3>Email</h3>
+                        </div>
+                        <div class="col-9" id="update-inputs">
+                            <div class="user-input">
+                                <input type="text" name="displayName" id="dnUpdate">
+                            </div>
+                            <br>
+                            <div class="user-input">
+                                <input type="email" name="email" id="emailUpdate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 <%- include('partials/footer'); %>

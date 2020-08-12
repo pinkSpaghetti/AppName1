@@ -166,7 +166,59 @@ a i{
   margin: 8px;
 }
 
-#groups-home .fa-home{
-  display: inline-block;
+/* Account Page */
+#account-main{
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#account-main .container-fluid, #account-main .back-panel{
+  padding: 0;
+  min-height: 100vh;
+}
+
+#account-main .back-panel2{
+  background-color: #8c8c8c;
+  padding: 0;
+}
+
+#account-main .col-1{
+  background-color: #6c6c6c;
+}
+
+#user-avatar{
+  padding: 20px;
+}
+
+.fa-pen{
+  display: none;
   font-size: 5em;
+  position: absolute;
+}
+
+#user-avatar:hover{
+  display: block;
+  cursor: pointer;
+}
+
+#dnLabel, #emailLabel{
+  font-size: 2em;
+}
+
+#emailUpdate, #dnUpdate{
+  height: 100%;
+  font-size: 1em;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#update-labels h3{
+  padding: 5px 10px;
+  margin: 4px 0;
+}
+
+#update-inputs .user-input{
+  margin: 5px 10px;
+  background-color: rgba(256, 256, 256, 0.3);
+  height: 2.5rem;
 }
