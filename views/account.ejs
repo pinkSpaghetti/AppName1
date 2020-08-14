@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-3 back-panel2">
                     <div id="user-avatar">
-                        <img src="https://via.placeholder.com/300">
+                        <img src="https://via.placeholder.com/300" id="user-profile">
                         <i class="fas fa-pen"></i>
                     </div>
                 </div>          
@@ -17,16 +17,23 @@
                             <h3>Display Name</h3>
                             <br>
                             <h3>Email</h3>
+                            <br>
+                            <h3>Password</h3>
                         </div>
                         <div class="col-9" id="update-inputs">
                             <div class="user-input">
-                                <input type="text" name="displayName" id="dnUpdate">
+                                <input type="text" name="displayName" id="dnUpdate" placeholder="Display Name">
                             </div>
                             <br>
                             <div class="user-input">
-                                <input type="email" name="email" id="emailUpdate">
+                                <input type="email" name="email" id="emailUpdate" placeholder="Email">
+                            </div>
+                            <br>
+                            <div class="user-input">
+                                <input type="password" name="password" id="passwordUpdate" placeholder="New Password">
                             </div>
                         </div>
+                        <button type="submit">Update Profile</button>
                     </div>
                 </div>
             </div>

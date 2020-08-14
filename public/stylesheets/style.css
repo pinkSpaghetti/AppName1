@@ -15,7 +15,7 @@ a i{
 /* 404 Page */
 .error404{
   text-align: center;
-  position: relative;
+  /*position: relative;*/
   width: 100%;
   display: flex;
   justify-content: center;
@@ -80,6 +80,11 @@ a i{
 
 #login-email:focus, #login-password:focus{
   outline: none;
+}
+
+.alert-primary{
+  width: 80%;
+  text-align: center;
 }
 
 /* Sign Up Page */
@@ -190,22 +195,19 @@ a i{
   padding: 20px;
 }
 
-.fa-pen{
-  display: none;
-  font-size: 5em;
+#user-avatar:hover{
+  opacity: 0.75;
+  display: inline-block;
+  cursor: pointer;
   position: absolute;
 }
 
-#user-avatar:hover{
-  display: block;
-  cursor: pointer;
+.fa-pen{
+  display: none;
+  font-size: 5em;
 }
 
-#dnLabel, #emailLabel{
-  font-size: 2em;
-}
-
-#emailUpdate, #dnUpdate{
+#emailUpdate, #dnUpdate, #passwordUpdate{
   height: 100%;
   font-size: 1em;
   width: 100%;
