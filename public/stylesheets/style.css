@@ -45,6 +45,10 @@ a i{
   margin: 10vh 0 2vh 0;
 }
 
+#login-main .inputsRow{
+  margin: 5vh 0 2vh 0;
+}
+
 #login-box{
   background-color: grey;
   padding: 0;
@@ -83,8 +87,12 @@ a i{
 }
 
 .alert-primary{
-  width: 80%;
+  width: 100%;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #121212;
+  font-size: 1.2em;
+  border: none;
 }
 
 /* Sign Up Page */
@@ -191,20 +199,27 @@ a i{
   background-color: #6c6c6c;
 }
 
-#user-avatar{
-  padding: 20px;
+#avatar-img{
+  position: absolute;
 }
 
-#user-avatar:hover{
-  opacity: 0.75;
-  display: inline-block;
+#user-avatar{
+  padding: 20px;
+  height: 340px;
   cursor: pointer;
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-avatar:hover .fa-pen{
+  display: flex;
 }
 
 .fa-pen{
   display: none;
   font-size: 5em;
+  position: absolute;
 }
 
 #emailUpdate, #dnUpdate, #passwordUpdate{

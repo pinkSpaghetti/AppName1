@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-3 back-panel2">
                     <div id="user-avatar">
-                        <img src="https://via.placeholder.com/300" id="user-profile">
+                        <img src="https://via.placeholder.com/300" id="avatar-img">
                         <i class="fas fa-pen"></i>
                     </div>
                 </div>          
@@ -32,6 +32,11 @@
                             <div class="user-input">
                                 <input type="password" name="password" id="passwordUpdate" placeholder="New Password">
                             </div>
+                            <% if (locals.errors && locals.errors.profile) { %>
+                                <% locals.errors.profile.forEach(function(error) { %>
+                                    <p class="alert alert-primary" role="alert"><%= error %></p>
+                                <% }) %>
+                            <% } %>
                         </div>
                         <button type="submit">Update Profile</button>
                     </div>

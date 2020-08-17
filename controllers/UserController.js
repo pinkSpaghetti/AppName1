@@ -121,7 +121,7 @@ class UserController{
      * On failure renders '/account' with an error message
      * Requires the following POST form name fields:
      *   
-     * @param {string} request.body.displayName     User's display anem from field
+     * @param {string} request.body.displayName     User's display name from field
      * @param {email} request.body.email            User's email from field
      * @param {file} request.body.avatar            User's avatar from image upload field
      * 
