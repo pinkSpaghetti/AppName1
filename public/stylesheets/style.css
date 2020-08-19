@@ -200,7 +200,8 @@ a i{
 }
 
 #avatar-img{
-  position: absolute;
+  display: none;
+  width: 300px;
 }
 
 #user-avatar{
@@ -238,4 +239,8 @@ a i{
   margin: 5px 10px;
   background-color: rgba(256, 256, 256, 0.3);
   height: 2.5rem;
+}
+
+#avaUpdate{
+  display: none;
 }
