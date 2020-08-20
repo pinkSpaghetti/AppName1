@@ -7,23 +7,30 @@
                 </div>
                 <div class="col-3 back-panel2">
                     <div id="user-avatar">
-                        <img id="output">
-                        <label for="file">
+                        <input type="file" name="avatar" id="avaUpdate" onchange="loadFile(event)">
+                        <label for="avaUpdate" id="uploadLabel">
                             <i class="fas fa-pen"></i>
                         </label>
-                        <input type="file" name="avatar" id="avaUpdate" onchange="loadFile(event)">
+                        <img id="output">
                     </div>
+                    <% if (locals.errors && locals.errors.profile) { %>
+                        <% locals.errors.profile.forEach(function(error) { %>
+                            <p class="alert alert-primary" role="alert"><%= error %></p>
+                        <% }) %>
+                    <% } %>
                 </div>          
                 <div class="col-8">
                     <div class="row">
-                        <div class="col-3" id="update-labels">
+                        <div class="col-4" id="update-labels">
                             <h3>Display Name</h3>
                             <br>
                             <h3>Email</h3>
                             <br>
                             <h3>Password</h3>
+                            <br>
+                            <h3 class="passwordUpdateConfirm">Confirm Password</h3>
                         </div>
-                        <div class="col-9" id="update-inputs">
+                        <div class="col-8" id="update-inputs">
                             <div class="user-input">
                                 <input type="text" name="displayName" id="dnUpdate" placeholder="Display Name">
                             </div>
@@ -35,11 +42,10 @@
                             <div class="user-input">
                                 <input type="password" name="password" id="passwordUpdate" placeholder="New Password">
                             </div>
-                            <% if (locals.errors && locals.errors.profile) { %>
-                                <% locals.errors.profile.forEach(function(error) { %>
-                                    <p class="alert alert-primary" role="alert"><%= error %></p>
-                                <% }) %>
-                            <% } %>
+                            <br>
+                            <div class="user-input passwordUpdateConfirm">
+                                <input type="password" name="passwordConfirm" id="passwordUpdateConfirm" placeholder="Confirm Password">
+                            </div>
                         </div>
                         <button type="submit">Update Profile</button>
                     </div>

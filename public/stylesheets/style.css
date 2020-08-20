@@ -199,8 +199,7 @@ a i{
   background-color: #6c6c6c;
 }
 
-#avatar-img{
-  display: none;
+#output{
   width: 300px;
 }
 
@@ -213,21 +212,20 @@ a i{
   align-items: center;
 }
 
-#user-avatar:hover .fa-pen{
-  display: flex;
-}
-
 .fa-pen{
   display: none;
   font-size: 5em;
-  position: absolute;
 }
 
-#emailUpdate, #dnUpdate, #passwordUpdate{
+#emailUpdate, #dnUpdate, #passwordUpdate, #passwordUpdateConfirm{
   height: 100%;
   font-size: 1em;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
+}
+
+#update-labels{
+  text-align: right;
 }
 
 #update-labels h3{
@@ -243,4 +241,22 @@ a i{
 
 #avaUpdate{
   display: none;
+}
+
+#uploadLabel{
+  position: absolute;
+  margin: 0;
+  cursor: pointer;
+}
+
+#user-avatar:hover .fa-pen{
+  display: flex;
+}
+
+.passwordUpdateConfirm{
+  display: none;
+}
+
+#passwordUpdate:focus + .passwordUpdateConfirm, .passwordUpdateConfirm:focus{
+  display: block;
 }
