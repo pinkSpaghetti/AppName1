@@ -215,7 +215,7 @@ class ChannelController{
     /**
      * Gets channels, including owned and subscribed
      * Also includes list of users excluding current user to allow 
-     * adding of users in channel creation} request 
+     * adding of users in channel creation request 
      */
     fetchChannelData = async (request, response, next) => {
         try{

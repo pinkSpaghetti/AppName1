@@ -201,6 +201,7 @@ a i{
 
 #output{
   width: 300px;
+  margin-top: 20px;
 }
 
 #user-avatar{
@@ -215,6 +216,7 @@ a i{
 .fa-pen{
   display: none;
   font-size: 5em;
+  color: #dadada;
 }
 
 #emailUpdate, #dnUpdate, #passwordUpdate, #passwordUpdateConfirm{
@@ -252,11 +254,16 @@ a i{
 #user-avatar:hover .fa-pen{
   display: flex;
 }
-
+/*
 .passwordUpdateConfirm{
   display: none;
 }
 
-#passwordUpdate:focus + .passwordUpdateConfirm, .passwordUpdateConfirm:focus{
-  display: block;
+#passwordUpdate:active .passwordUpdateConfirm, .passwordUpdateConfirm:focus{
+  display: flex;
+}
+*/
+h2{
+  text-align: center;
+  padding: 0.5em 0;
 }
