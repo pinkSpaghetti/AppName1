@@ -2,65 +2,65 @@
 <div id="account-main">
     <div class="container-fluid">
         <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update" autocomplete="off">
-            <div class="row">
-                <div class="col-1 back-panel">
+        <div class="row">
+            <div class="col-1 back-panel">
+            </div>
+            <div class="col-3 back-panel2">
+                <div id="user-avatar">
+                    <input type="file" name="avatar" id="avaUpdate" onchange="loadFile(event)">
+                    <label for="avaUpdate" id="uploadLabel">
+                        <i class="fas fa-pen"></i>
+                    </label>
+                    <img src="<%= user.photoURL %>" id="output">
                 </div>
-                <div class="col-3 back-panel2">
-                    <div id="user-avatar">
-                        <input type="file" name="avatar" id="avaUpdate" onchange="loadFile(event)">
-                        <label for="avaUpdate" id="uploadLabel">
-                            <i class="fas fa-pen"></i>
-                        </label>
-                        <img id="output">
+                <button type="submit" form="profile-update" class="form-submission">Update Profile Details</button>
+                <button type="submit" form="passwordUpdateForm" class="form-submission">Update Password</button>
+                <% if (locals.errors && locals.errors.profile) { %>
+                    <% locals.errors.profile.forEach(function(error) { %>
+                        <p class="alert alert-primary" role="alert"><%= error %></p>
+                    <% }) %>
+                <% } %>
+            </div>
+            <div class="col-8">
+                <h2>Update Profile</h2>
+                <div class="row">
+                    <div class="col-4" id="update-labels">
+                        <h3>Display Name</h3>
+                        <br>
+                        <h3>Email</h3>
+                        <br>
+                        <h3>Password</h3>
+                        <br>
+                        <h3 class="passwordUpdateConfirm">Confirm Password</h3>
                     </div>
-                    <% if (locals.errors && locals.errors.profile) { %>
-                        <% locals.errors.profile.forEach(function(error) { %>
-                            <p class="alert alert-primary" role="alert"><%= error %></p>
-                        <% }) %>
-                    <% } %>
-                </div>
-                <div class="col-8">
-                    <h2>Update Profile</h2>
-                    <div class="row">
-                        <div class="col-4" id="update-labels">
-                            <h3>Display Name</h3>
-                            <br>
-                            <h3>Email</h3>
-                            <br>
-                            <h3>Password</h3>
-                            <br>
-                            <h3 class="passwordUpdateConfirm">Confirm Password</h3>
+                    <div class="col-8" id="update-inputs">
+                        <div class="user-input">
+                            <input type="text" name="displayName" id="dnUpdate" placeholder="<%= user.displayName %>">
                         </div>
-                        <div class="col-8" id="update-inputs">
+                        <br>
+                        <div class="user-input">
+                            <input type="email" name="email" id="emailUpdate" placeholder="<%= user.email %>">
+                        </div>
+                        <br>
+                    </form>
+                        <form action="/password" method="POST" id="passwordUpdateForm">
                             <div class="user-input">
-                                <input type="text" name="displayName" id="dnUpdate" placeholder="Display Name">
+                                <input type="password" name="password" id="passwordUpdate" placeholder="New Password">
                             </div>
                             <br>
-                            <div class="user-input">
-                                <input type="email" name="email" id="emailUpdate" placeholder="Email">
+                            <div class="user-input passwordUpdateConfirm">
+                                <input type="password" name="passwordConfirm" id="passwordUpdateConfirm" placeholder="Confirm Password">
                             </div>
-                            <br>
-                            <form action="/password" method="POST" id="passwordUpdateForm">
-                                <div class="user-input">
-                                    <input type="password" name="password" id="passwordUpdate" placeholder="New Password">
-                                </div>
-                                <br>
-                                <div class="user-input passwordUpdateConfirm">
-                                    <input type="password" name="passwordConfirm" id="passwordUpdateConfirm" placeholder="Confirm Password">
-                                </div>
-                                <% if (locals.errors && locals.errors.password) { %>
-                                    <% locals.errors.password.forEach(function(error) { %>
-                                        <p class="alert alert-primary" role="alert"><%= error %></p>
-                                    <% }) %>
-                                <% } %>
-                            </form>
-                        </div>
-                        <button type="submit" form="profile-update">Update Profile Details</button>
-                        <button type="submit" form="passwordUpdateForm">Update Password</button>
+                            <% if (locals.errors && locals.errors.password) { %>
+                                <% locals.errors.password.forEach(function(error) { %>
+                                    <p class="alert alert-primary" role="alert"><%= error %></p>
+                                <% }) %>
+                            <% } %>
+                        </form>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <%- include('partials/footer'); %>

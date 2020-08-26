@@ -201,16 +201,20 @@ a i{
 
 #output{
   width: 300px;
-  margin-top: 20px;
 }
 
 #user-avatar{
-  padding: 20px;
-  height: 340px;
+  margin: 10px;
+  padding: 10px;
+  height: 320px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-color: #121212;
+  border-width: 2px;
+  border-style: inset;
+  border-radius: 10%;
 }
 
 .fa-pen{
@@ -221,7 +225,7 @@ a i{
 
 #emailUpdate, #dnUpdate, #passwordUpdate, #passwordUpdateConfirm{
   height: 100%;
-  font-size: 1em;
+  font-size: 1.25em;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -266,4 +270,11 @@ a i{
 h2{
   text-align: center;
   padding: 0.5em 0;
+}
+
+.form-submission{
+  height: 2.5rem;
+  font-size: 1.3em;
+  width: 60%;
+  margin: 5px 70px;
 }
