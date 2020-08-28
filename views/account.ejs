@@ -1,17 +1,27 @@
 <%- include('partials/styleOnlyHeader'); %>
 <div id="account-main">
     <div class="container-fluid">
-        <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update" autocomplete="off">
         <div class="row">
             <div class="col-1 back-panel">
+                <div class="channel-links">
+                    <div class="home-link">
+                        <i class="fas fa-home"></i>
+                    </div>
+                </div>
+                <form action="/logout" method="GET" id="logout">
+                    <button type="submit" form="logout" id="logout-button">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </form>
             </div>
             <div class="col-3 back-panel2">
+                <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update" autocomplete="off">
                 <div id="user-avatar">
                     <input type="file" name="avatar" id="avaUpdate" onchange="loadFile(event)">
                     <label for="avaUpdate" id="uploadLabel">
                         <i class="fas fa-pen"></i>
                     </label>
-                    <img src="<%= user.photoURL %>" id="output">
+                    <img src="<%= locals.user.photoURL %>" id="output">
                 </div>
                 <button type="submit" form="profile-update" class="form-submission">Update Profile Details</button>
                 <button type="submit" form="passwordUpdateForm" class="form-submission">Update Password</button>
@@ -35,11 +45,11 @@
                     </div>
                     <div class="col-8" id="update-inputs">
                         <div class="user-input">
-                            <input type="text" name="displayName" id="dnUpdate" placeholder="<%= user.displayName %>">
+                            <input type="text" name="displayName" id="dnUpdate" placeholder="Currently : <%= locals.user.displayName %>">
                         </div>
                         <br>
                         <div class="user-input">
-                            <input type="email" name="email" id="emailUpdate" placeholder="<%= user.email %>">
+                            <input type="email" name="email" id="emailUpdate" placeholder="Currently : <%= locals.user.email %>">
                         </div>
                         <br>
                     </form>

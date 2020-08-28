@@ -186,8 +186,15 @@ a i{
 }
 
 #account-main .container-fluid, #account-main .back-panel{
-  padding: 0;
   min-height: 100vh;
+}
+
+#account-main .back-panel{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column;
 }
 
 #account-main .back-panel2{
@@ -277,4 +284,23 @@ h2{
   font-size: 1.3em;
   width: 60%;
   margin: 5px 70px;
+}
+
+.fa-sign-out-alt{
+  font-size: 5em;
+}
+
+#logout-button{
+  padding: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.home-link{
+  background-color: #8c8c8c;
+  padding: 3px;
+}
+
+.fa-home{
+  font-size: 5em;
 }
