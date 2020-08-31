@@ -290,6 +290,10 @@ h2{
   font-size: 5em;
 }
 
+#logout-button:focus, .fa-sign-out-alt:focus{
+  outline: none;
+}
+
 #logout-button{
   padding: 0;
   border: 0;
@@ -297,8 +301,14 @@ h2{
 }
 
 .home-link{
+  display: flex;
   background-color: #8c8c8c;
   padding: 3px;
+  border-radius: 35%;
+  height: 85px;
+  width: 85px;
+  justify-content: center;
+  align-items: center;
 }
 
 .fa-home{
