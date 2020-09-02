@@ -2,12 +2,15 @@
 <div id="account-main">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1 back-panel">
+            <!--<div class="col-1 back-panel">
                 <div class="channel-links">
                     <div class="home-link">
                         <i class="fas fa-home"></i>
                     </div>
                     <hr>
+                    <div class="new-channel">
+                        <i class="fas fa-plus"></i>
+                    </div>
                 </div>
                 <form action="/logout" method="GET" id="logout">
                     <hr>
@@ -15,7 +18,8 @@
                         <i class="fas fa-sign-out-alt"></i>
                     </button>
                 </form>
-            </div>
+            </div>-->
+            <%- include('partials/sidebar'); %>
             <div class="col-3 back-panel2">
                 <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update" autocomplete="off">
                 <div id="user-avatar">

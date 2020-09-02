@@ -286,21 +286,17 @@ h2{
   margin: 5px 70px;
 }
 
-.fa-sign-out-alt{
-  font-size: 5em;
-}
-
-#logout-button:focus, .fa-sign-out-alt:focus{
+#logout-button:focus, .fa-sign-out-alt:focus, #add-channels:focus, .fa-plus:focus{
   outline: none;
 }
 
-#logout-button{
+#logout-button, #add-channels{
   padding: 0;
   border: 0;
   background-color: rgba(0, 0, 0, 0);
 }
 
-.home-link{
+.home-link, .new-channel{
   display: flex;
   background-color: #8c8c8c;
   padding: 3px;
@@ -311,6 +307,6 @@ h2{
   align-items: center;
 }
 
-.fa-home{
+.fa-home, .fa-plus, .fa-sign-out-alt{
   font-size: 5em;
 }

@@ -1,5 +1,7 @@
 <%- include('partials/styleOnlyHeader'); %>
 <% var users = locals.channels.users %>
+<% var subscribed = locals.channels.subscribed %>
+<% var owned = locals.channels.owned %>
 <form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
 	<input type="text" class="form-control" name="name" placeholder="Display Name" value="">
 	<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
