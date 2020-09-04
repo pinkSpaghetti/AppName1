@@ -23,11 +23,11 @@
             <div class="col-3 back-panel2">
                 <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update" autocomplete="off">
                 <div id="user-avatar">
-                    <input type="file" name="avatar" id="avaUpdate" onchange="loadFile(event)">
+                    <input type="file" name="avatar" id="avaUpdate" onchange="userAvatar(event)">
                     <label for="avaUpdate" id="uploadLabel">
                         <i class="fas fa-pen"></i>
                     </label>
-                    <img src="<%= locals.user.photoURL %>" id="output">
+                    <img src="<%= locals.user.photoURL %>" id="userAvaOutput">
                 </div>
                 <button type="submit" form="profile-update" class="form-submission">Update Profile Details</button>
                 <button type="submit" form="passwordUpdateForm" class="form-submission">Update Password</button>

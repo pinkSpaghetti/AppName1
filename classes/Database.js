@@ -14,7 +14,7 @@ class Database{
      * 
      * Calls Firebase and Firebase Admin modules
      * and loads credentials from JSON files.
-     * Includes the following key class properties:
+     * Includes the folowing key class properties:
      *      this.firebase       -   for user Auth requests
      *      this.firebaseAdmin  -   for firestore collection requests
      * 

@@ -206,7 +206,7 @@ a i{
   background-color: #6c6c6c;
 }
 
-#output{
+#userAvaOutput{
   width: 300px;
 }
 
@@ -296,11 +296,11 @@ h2{
   background-color: rgba(0, 0, 0, 0);
 }
 
-.home-link, .new-channel{
+.home-link, .new-channel, .logout{
   display: flex;
   background-color: #8c8c8c;
   padding: 3px;
-  border-radius: 35%;
+  border-radius: 30%;
   height: 85px;
   width: 85px;
   justify-content: center;
@@ -308,5 +308,32 @@ h2{
 }
 
 .fa-home, .fa-plus, .fa-sign-out-alt{
-  font-size: 5em;
+  font-size: 4.5em;
+  color: #121212;
+}
+
+.home-link:hover, .fa-home:hover .home-link, .new-channel:hover, .fa-plus:hover .new-channel, .logout:hover, .fa-sign-out-alt:hover .logout{
+  box-shadow: 3px #121212;
+}
+
+/* Channels Page */
+#channels-main{
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#channels-main  .container-fluid, #channels-main .back-panel{
+  min-height: 100vh;
+}
+
+#channels-main .back-panel{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+#channels-main .col-1{
+  background-color: #6c6c6c;
 }
