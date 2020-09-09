@@ -10,7 +10,7 @@
 				<div id="owned-channels" class="user-channels">
 					<h4>Your Channels</h4>
 					<% if (owned) { %>
-						<ul>
+						<!--<ul>
 						<% owned.forEach(function(channel) { %>
 							<li>
 								<img src="<%= channel.image %>" alt="<%= channel.name %>">
@@ -18,7 +18,14 @@
 								<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
 							</li>
 						<% }) %>
-						</ul>
+						</ul>-->
+						<% owned.forEach(function(channel) { %>
+							<div class="channel-list">
+								<img src="<%= channel.image %>" alt="<%= channel.name %>" class="channel-ava">
+								<a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
+								<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+							</div>
+						<% }) %>
 					<% }  %>
 				</div>
 				<div id="subscribed-channels" >
@@ -37,8 +44,10 @@
 			</div>
 			<div class="col-8">
 				<form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
-					<input type="text" class="form-control" name="name" placeholder="Display Name" value="">
-					<input type="file" class="custom-file-input" name="avatar" id="avatar-upload">
+					<input type="text" class="form-control" name="name" placeholder="Display Name">
+					<input type="file" class="custom-file-input" name="avatar" id="avatar-upload" onchange="channelAvatar(event)">
+					<label for="avatar-upload" id="channelAvaUploadLabel">Upload Image</label>
+					<img id="channelAvaOutput">
 					<% if (users) { %>
 						<% users.forEach(function(user) { %>
 							<input class="user-check-input" id="user<%= user.id %>" type="checkbox" name="users" value="<%= user.id %>">

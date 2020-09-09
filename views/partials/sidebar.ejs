@@ -3,9 +3,13 @@
 <% var owned = locals.channels.owned %>
 <div class="col-1 back-panel">
     <div class="channel-links">
-        <div class="home-link">
-            <i class="fas fa-home"></i>
-        </div>
+        <form action="/account" method="GET">
+            <div class="home-link">
+                <button id="profile-update">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </form>
         <hr>
         <form action="/channels" method="GET" id="channels">
             <div class="new-channel">
