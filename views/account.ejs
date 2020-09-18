@@ -1,82 +1,82 @@
 <%- include('partials/styleOnlyHeader'); %>
 <div id="account-main">
     <div class="container-fluid">
-        <div class="row">
-            <!--<div class="col-1 back-panel">
-                <div class="channel-links">
-                    <div class="home-link">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <hr>
-                    <div class="new-channel">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                </div>
-                <form action="/logout" method="GET" id="logout">
-                    <hr>
-                    <button type="submit" form="logout" id="logout-button">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </button>
-                </form>
-            </div>-->
-            <%- include('partials/sidebar'); %>
-            <div class="col-3 back-panel2">
-                <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update" autocomplete="off">
-                <div id="user-avatar">
-                    <input type="file" name="avatar" id="avaUpdate" onchange="userAvatar(event)">
-                    <label for="avaUpdate" id="uploadLabel">
-                        <i class="fas fa-pen"></i>
-                    </label>
-                    <img src="<%= locals.user.photoURL %>" id="userAvaOutput">
-                </div>
-                <button type="submit" form="profile-update" class="form-submission">Update Profile Details</button>
-                <button type="submit" form="passwordUpdateForm" class="form-submission">Update Password</button>
-                <% if (locals.errors && locals.errors.profile) { %>
-                    <% locals.errors.profile.forEach(function(error) { %>
-                        <p class="alert alert-primary" role="alert"><%= error %></p>
-                    <% }) %>
-                <% } %>
-            </div>
-            <div class="col-8">
-                <h2>Update Profile</h2>
-                <div class="row">
-                    <div class="col-4" id="update-labels">
-                        <h3>Display Name</h3>
-                        <br>
-                        <h3>Email</h3>
-                        <br>
-                        <h3>Password</h3>
-                        <br>
-                        <h3 class="passwordUpdateConfirm">Confirm Password</h3>
-                    </div>
-                    <div class="col-8" id="update-inputs">
-                        <div class="user-input">
-                            <input type="text" name="displayName" id="dnUpdate" placeholder="Currently : <%= locals.user.displayName %>">
+        <form action="/account" method="POST" enctype="multipart/form-data" id="profile-update" autocomplete="off">
+            <div class="row">
+                <!--<div class="col-1 back-panel">
+                    <div class="channel-links">
+                        <div class="home-link">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <br>
-                        <div class="user-input">
-                            <input type="email" name="email" id="emailUpdate" placeholder="Currently : <%= locals.user.email %>">
+                        <hr>
+                        <div class="new-channel">
+                            <i class="fas fa-plus"></i>
                         </div>
-                        <br>
+                    </div>
+                    <form action="/logout" method="GET" id="logout">
+                        <hr>
+                        <button type="submit" form="logout" id="logout-button">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
                     </form>
-                        <form action="/password" method="POST" id="passwordUpdateForm">
+                </div>-->
+                <%- include('partials/sidebar'); %>
+                <div class="col-3 back-panel2">
+                    <div id="user-avatar">
+                        <input type="file" name="avatar" id="avaUpdate" onchange="userAvatar(event)">
+                        <label for="avaUpdate" id="uploadLabel">
+                            <i class="fas fa-pen"></i>
+                        </label>
+                        <img src="<%= locals.user.photoURL %>" id="userAvaOutput">
+                    </div>
+                    <button type="submit" form="profile-update" class="form-submission">Update Profile Details</button>
+                    <button type="submit" form="passwordUpdateForm" class="form-submission">Update Password</button>
+                    <% if (locals.errors && locals.errors.profile) { %>
+                        <% locals.errors.profile.forEach(function(error) { %>
+                            <p class="alert alert-primary" role="alert"><%= error %></p>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <div class="col-8">
+                    <h2>Update Profile</h2>
+                    <div class="row">
+                        <div class="col-4" id="update-labels">
+                            <h3>Display Name</h3>
+                            <br>
+                            <h3>Email</h3>
+                            <br>
+                            <h3>Password</h3>
+                            <br>
+                            <h3 class="passwordUpdateConfirm">Confirm Password</h3>
+                        </div>
+                        <div class="col-8" id="update-inputs">
                             <div class="user-input">
-                                <input type="password" name="password" id="passwordUpdate" placeholder="New Password">
+                                <input type="text" name="displayName" id="dnUpdate" placeholder="Currently : <%= locals.user.displayName %>">
                             </div>
                             <br>
-                            <div class="user-input passwordUpdateConfirm">
-                                <input type="password" name="passwordConfirm" id="passwordUpdateConfirm" placeholder="Confirm Password">
+                            <div class="user-input">
+                                <input type="email" name="email" id="emailUpdate" placeholder="Currently : <%= locals.user.email %>">
                             </div>
-                            <% if (locals.errors && locals.errors.password) { %>
-                                <% locals.errors.password.forEach(function(error) { %>
-                                    <p class="alert alert-primary" role="alert"><%= error %></p>
-                                <% }) %>
-                            <% } %>
-                        </form>
+                            <br>
+                            <form action="/password" method="POST" id="passwordUpdateForm">
+                                <div class="user-input">
+                                    <input type="password" name="password" id="passwordUpdate" placeholder="New Password">
+                                </div>
+                                <br>
+                                <div class="user-input passwordUpdateConfirm">
+                                    <input type="password" name="passwordConfirm" id="passwordUpdateConfirm" placeholder="Confirm Password">
+                                </div>
+                                <% if (locals.errors && locals.errors.password) { %>
+                                    <% locals.errors.password.forEach(function(error) { %>
+                                        <p class="alert alert-primary" role="alert"><%= error %></p>
+                                    <% }) %>
+                                <% } %>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <%- include('partials/footer'); %>

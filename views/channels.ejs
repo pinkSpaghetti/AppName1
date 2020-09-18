@@ -22,8 +22,16 @@
 						<% owned.forEach(function(channel) { %>
 							<div class="channel-list">
 								<img src="<%= channel.image %>" alt="<%= channel.name %>" class="channel-ava">
-								<a href="/channel/<%= channel.id %>/"><%= channel.name %></a>
-								<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								<!--<a href="/channel/<%= channel.id %>/" class="channel-name"><%= channel.name %></a>-->
+								<form action="/channel/<%= channel.id%>/" method="get" class="channel-name" id="channel-name">
+									<input type="submit" value="<%= channel.name %>" form="channel-name">
+								</form>
+								<!--<a href="/channels/delete/<%= channel.id %>/"><i class="fa fa-trash" aria-hidden="true"></i></a>-->
+								<form action="/channels/delete/<%= channel.id %>/" method="get" id="channel-delete">
+									<button type="submit" form="channel-delete" id="chan-delete-button">
+										<i class="fa fa-trash" aria-hidden="true"></i>
+									</button>
+								</form>
 							</div>
 						<% }) %>
 					<% }  %>
@@ -43,8 +51,12 @@
 				</div>
 			</div>
 			<div class="col-8">
+				<h2>Create Channel</h2>
 				<form id="channel-create-form" action="/channels/add" method="post" enctype="multipart/form-data">
-					<input type="text" class="form-control" name="name" placeholder="Display Name">
+					<div class="row">
+						<div class="col-3">
+						</div>
+					</div>
 					<input type="file" class="custom-file-input" name="avatar" id="avatar-upload" onchange="channelAvatar(event)">
 					<label for="avatar-upload" id="channelAvaUploadLabel">Upload Image</label>
 					<img id="channelAvaOutput">
