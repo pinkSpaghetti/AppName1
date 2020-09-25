@@ -86,6 +86,10 @@ a i{
   outline: none;
 }
 
+#login-main .login-btn{
+  margin: 2vh;
+}
+
 .alert-primary{
   width: 100%;
   text-align: center;
@@ -93,6 +97,19 @@ a i{
   color: #121212;
   font-size: 1.2em;
   border: none;
+}
+
+#login-button{
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 10%;
+  background-color: #6c6c6c;
+}
+
+#login-button:focus{
+  outline: none;
 }
 
 /* Sign Up Page */
@@ -349,6 +366,7 @@ h2{
 .channel-list{
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 4.5em;
 }
